@@ -15,6 +15,7 @@ const Menu = () => {
             </div>
             <div className="menu-container">
                 <div className="menu-logo"><img className="logo" src={require("../../asssets/Dog-logo.png")} alt="dog"/></div>
+                <div className="menu-title">Breeds</div>
             </div>
         </div>
     )
