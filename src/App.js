@@ -9,16 +9,17 @@ import BreedImage from "./components/breed/BreedImage"
 class App extends Component {
 
   state = {
+    selectedBreed: null,
     breedsList: null,
     error: false
   }
-  componentDidCatch() {
+  componentDidMount() {
     this.fetchApi()
   }
   fetchApi = async () => {
     try {
-      const response = await fetch("https://dog.ceo/api/breeds/list/all")
-      if (response.ok) {
+      const response = await fetch('https://dog.ceo/api/breeds/list/all')
+      if (response.ok) { //code 200
         const data = await response.json()
         this.setState({
           breedsList: Object.keys(data.message)
@@ -45,8 +46,8 @@ class App extends Component {
     return (
       <div className="App">
         <Menu />
-        <Select breedsList={this.state.breedsList} isError={this.state.error} />
-        <BreedImage />
+        <Select breedsList={this.state.breedsList} onSelect={this.selectHandler} isError={this.state.error} />
+        <BreedImage breed={this.state.selectedBreed}/>
       </div>
     );
   }
