@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
-import {Menu} from "./components/Menu"
+import Menu from "./components/menu/Menu"
+import Select from "./components/select/Select"
+import BreedImage from "./components/breed/BreedImage"
 
 
 
